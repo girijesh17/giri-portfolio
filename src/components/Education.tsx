@@ -79,12 +79,12 @@ const Education = () => {
                   <div className="absolute left-8 md:left-auto md:right-[-8px] top-8 w-4 h-4 bg-primary rounded-full border-4 border-background hidden md:block" />
                   
                   <Card
-                    className="p-6 md:p-8 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 ml-16 md:ml-0"
+                    className="p-6 md:p-8 bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20 ml-16 md:ml-0 group"
                     style={{ animationDelay: `${index * 200}ms` }}
                   >
                     <div className="flex items-start gap-4">
-                      <div className="p-3 bg-primary/20 rounded-lg flex-shrink-0">
-                        <GraduationCap className="w-6 h-6 text-primary" />
+                      <div className="p-3 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex-shrink-0 group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300">
+                        <GraduationCap className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
                       </div>
                       <div className="flex-1 space-y-2">
                         {edu.current && (

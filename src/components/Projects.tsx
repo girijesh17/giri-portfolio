@@ -2,6 +2,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Bot, AlertTriangle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import bankingChatbotImg from "@/assets/banking-chatbot.jpg";
+import harbourAiImg from "@/assets/harbour-ai.jpg";
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,7 +37,8 @@ const Projects = () => {
         "Implemented Python-based automation for answering user queries",
         "Built with Flask framework for robust backend functionality"
       ],
-      color: "from-blue-500 to-cyan-500"
+      image: bankingChatbotImg,
+      color: "from-primary to-accent"
     },
     {
       icon: AlertTriangle,
@@ -49,7 +52,8 @@ const Projects = () => {
         "Focused on improving safety and early warning response"
       ],
       link: "https://aquamarine-basbousa-0328d1.netlify.app/",
-      color: "from-orange-500 to-red-500"
+      image: harbourAiImg,
+      color: "from-secondary to-primary"
     }
   ];
 
@@ -68,25 +72,34 @@ const Projects = () => {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className="p-8 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 group"
+                className="p-0 bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20 group overflow-hidden"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="space-y-6">
-                  <div className="flex items-start justify-between">
-                    <div className={`p-4 bg-gradient-to-br ${project.color} rounded-lg shadow-lg`}>
-                      <project.icon className="w-8 h-8 text-white" />
+                {/* Project Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <div className={`p-3 bg-gradient-to-br ${project.color} rounded-lg shadow-lg`}>
+                      <project.icon className="w-6 h-6 text-white" />
                     </div>
-                    {project.link && (
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className="hover:bg-primary/20"
-                        onClick={() => window.open(project.link, '_blank')}
-                      >
-                        <ExternalLink className="w-5 h-5 text-primary" />
-                      </Button>
-                    )}
                   </div>
+                  {project.link && (
+                    <Button
+                      size="icon"
+                      className="absolute top-4 right-4 bg-background/80 hover:bg-primary backdrop-blur-sm"
+                      onClick={() => window.open(project.link, '_blank')}
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </Button>
+                  )}
+                </div>
+
+                <div className="p-8 space-y-6">
 
                   <div className="space-y-3">
                     <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">

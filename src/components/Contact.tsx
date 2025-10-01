@@ -77,12 +77,12 @@ const Contact = () => {
             {contactInfo.map((info, index) => (
               <Card
                 key={index}
-                className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 text-center"
+                className="p-6 bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 text-center group"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex flex-col items-center gap-4">
-                  <div className="p-4 bg-primary/20 rounded-full">
-                    <info.icon className="w-6 h-6 text-primary" />
+                  <div className="p-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300">
+                    <info.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <div className="space-y-1">
                     <p className="text-sm font-semibold text-muted-foreground">{info.label}</p>
@@ -118,8 +118,8 @@ const Contact = () => {
               ))}
             </div>
 
-            <Card className="p-8 bg-gradient-to-r from-primary/10 to-accent/10 border-primary/30 max-w-2xl w-full text-center">
-              <p className="text-lg text-foreground mb-4">
+            <Card className="p-8 bg-gradient-to-r from-primary/10 to-accent/10 border-primary/30 max-w-2xl w-full text-center hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 group">
+              <p className="text-lg text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
                 Interested in data science, machine learning, or software development projects?
               </p>
               <Button

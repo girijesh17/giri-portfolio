@@ -41,10 +41,10 @@ const Experience = () => {
             <div className="h-1 w-24 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
           </div>
 
-          <Card className="p-8 md:p-12 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-primary/20">
+          <Card className="p-8 md:p-12 bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl hover:shadow-primary/20 group">
             <div className="flex flex-col md:flex-row md:items-start gap-6">
-              <div className="p-4 bg-primary/20 rounded-lg flex-shrink-0">
-                <Briefcase className="w-8 h-8 text-primary" />
+              <div className="p-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex-shrink-0 group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300">
+                <Briefcase className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
               
               <div className="flex-1 space-y-4">

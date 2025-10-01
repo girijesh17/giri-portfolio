@@ -61,14 +61,14 @@ const Skills = () => {
             {skillCategories.map((category, index) => (
               <Card
                 key={index}
-                className="p-8 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-primary/20"
+                className="p-8 bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20 group"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-primary/20 rounded-lg">
-                    <category.icon className="w-8 h-8 text-primary" />
+                  <div className="p-3 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300">
+                    <category.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">{category.title}</h3>
+                  <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">{category.title}</h3>
                 </div>
                 <ul className="space-y-3">
                   {category.skills.map((skill, skillIndex) => (

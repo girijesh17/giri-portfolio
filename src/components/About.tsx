@@ -43,8 +43,8 @@ const About = () => {
             <div className="h-1 w-24 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
           </div>
 
-          <Card className="p-8 md:p-12 bg-card/50 backdrop-blur-sm border-border/50 shadow-xl hover:shadow-primary/20 transition-all duration-500">
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-center max-w-4xl mx-auto">
+          <Card className="p-8 md:p-12 bg-card/80 backdrop-blur-sm border-border/50 shadow-xl hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/30 transition-all duration-500 group">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-center max-w-4xl mx-auto group-hover:text-foreground transition-colors duration-300">
               As an enthusiastic MCA student, I possess a solid foundation in computer science and programming, 
               with proficiency in <span className="text-primary font-semibold">Python</span>, 
               <span className="text-primary font-semibold"> SQL</span>, and 
@@ -62,12 +62,12 @@ const About = () => {
               {strengths.map((strength, index) => (
                 <Card
                   key={index}
-                  className="p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+                  className="p-6 bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 group"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                    <p className="text-foreground font-medium">{strength}</p>
+                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300" />
+                    <p className="text-foreground font-medium group-hover:text-primary transition-colors duration-300">{strength}</p>
                   </div>
                 </Card>
               ))}
