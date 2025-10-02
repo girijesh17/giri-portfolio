@@ -25,11 +25,11 @@ const Hero = () => {
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center space-y-6 animate-fade-in-up">
-          <div className="inline-block animate-float">
-            <h1 className="text-5xl md:text-7xl font-bold mb-2 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent animate-gradient-shift bg-[length:200%_200%] drop-shadow-[0_0_30px_hsl(var(--glow-cyan))]">
+          <div className="inline-block">
+            <h1 className="text-5xl md:text-7xl font-bold mb-2 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-shift bg-[length:200%_200%]">
               Girijesh S
             </h1>
-            <div className="h-1 w-full bg-gradient-to-r from-primary via-accent to-secondary rounded-full animate-glow" />
+            <div className="h-1 w-full bg-gradient-to-r from-primary to-accent rounded-full" />
           </div>
           
           <p className="text-2xl md:text-3xl text-muted-foreground font-medium">
@@ -44,19 +44,18 @@ const Hero = () => {
           <div className="flex flex-wrap justify-center gap-4 pt-6">
             <Button
               size="lg"
-              className="relative overflow-hidden bg-primary/20 backdrop-blur-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-[0_0_20px_hsl(var(--glow-cyan)/0.5)] hover:shadow-[0_0_40px_hsl(var(--glow-cyan)/0.8)] transition-all duration-300 hover:scale-105 group"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <span className="relative z-10">View Projects</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/50 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500" />
+              View Projects
             </Button>
             <Button
               size="lg"
-              className="relative overflow-hidden bg-secondary/20 backdrop-blur-sm border-2 border-secondary text-secondary hover:bg-secondary hover:text-primary-foreground shadow-[0_0_20px_hsl(var(--glow-pink)/0.5)] hover:shadow-[0_0_40px_hsl(var(--glow-pink)/0.8)] transition-all duration-300 hover:scale-105 group"
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary/10 shadow-lg transition-all duration-300 hover:scale-105"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <span className="relative z-10">Get in Touch</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-secondary/0 via-secondary/50 to-secondary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500" />
+              Get in Touch
             </Button>
           </div>
           
@@ -94,9 +93,8 @@ const Hero = () => {
       </div>
       
       {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/30 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }} />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
     </section>
   );
 };

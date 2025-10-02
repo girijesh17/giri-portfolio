@@ -72,12 +72,9 @@ const Projects = () => {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className="p-0 bg-card/40 backdrop-blur-xl border-2 border-primary/30 hover:border-primary transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_hsl(var(--glow-cyan)/0.5)] group overflow-hidden relative"
+                className="p-0 bg-card/80 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20 group overflow-hidden"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                {/* Glowing corner accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr from-secondary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 {/* Project Image */}
                 <div className="relative h-48 overflow-hidden">
                   <img 
@@ -85,16 +82,16 @@ const Projects = () => {
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/70 to-transparent" />
-                  <div className="absolute top-4 left-4 animate-float">
-                    <div className={`p-3 bg-gradient-to-br ${project.color} rounded-lg shadow-[0_0_20px_hsl(var(--glow-cyan)/0.6)] border border-primary/50`}>
-                      <project.icon className="w-6 h-6 text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <div className={`p-3 bg-gradient-to-br ${project.color} rounded-lg shadow-lg`}>
+                      <project.icon className="w-6 h-6 text-white" />
                     </div>
                   </div>
                   {project.link && (
                     <Button
                       size="icon"
-                      className="absolute top-4 right-4 bg-primary/20 hover:bg-primary border border-primary backdrop-blur-sm hover:shadow-[0_0_20px_hsl(var(--glow-cyan)/0.8)] transition-all duration-300"
+                      className="absolute top-4 right-4 bg-background/80 hover:bg-primary backdrop-blur-sm"
                       onClick={() => window.open(project.link, '_blank')}
                     >
                       <ExternalLink className="w-4 h-4" />
@@ -105,10 +102,10 @@ const Projects = () => {
                 <div className="p-8 space-y-6">
 
                   <div className="space-y-3">
-                    <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 group-hover:drop-shadow-[0_0_10px_hsl(var(--glow-cyan))]">
+                    <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/90 transition-colors duration-300">
+                    <p className="text-muted-foreground leading-relaxed">
                       {project.description}
                     </p>
                   </div>
@@ -119,8 +116,8 @@ const Projects = () => {
                     </h4>
                     <ul className="space-y-2">
                       {project.highlights.map((highlight, hIndex) => (
-                        <li key={hIndex} className="flex items-start gap-2 text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0 shadow-[0_0_5px_hsl(var(--glow-cyan))] animate-neon-flicker" />
+                        <li key={hIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
                           <span>{highlight}</span>
                         </li>
                       ))}
@@ -131,7 +128,7 @@ const Projects = () => {
                     {project.technologies.map((tech, tIndex) => (
                       <span
                         key={tIndex}
-                        className="px-3 py-1 text-xs font-semibold bg-primary/20 text-primary rounded-full border border-primary/40 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--glow-cyan)/0.6)] cursor-default"
+                        className="px-3 py-1 text-xs font-semibold bg-primary/20 text-primary rounded-full"
                       >
                         {tech}
                       </span>

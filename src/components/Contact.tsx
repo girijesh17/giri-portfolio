@@ -77,13 +77,12 @@ const Contact = () => {
             {contactInfo.map((info, index) => (
               <Card
                 key={index}
-                className="p-6 bg-card/40 backdrop-blur-xl border-2 border-primary/30 hover:border-primary/60 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_hsl(var(--glow-cyan)/0.5)] text-center group relative overflow-hidden"
+                className="p-6 bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 text-center group"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="flex flex-col items-center gap-4 relative z-10">
-                  <div className="p-4 bg-gradient-to-br from-primary/30 to-accent/30 rounded-full group-hover:shadow-[0_0_20px_hsl(var(--glow-cyan)/0.7)] border border-primary/40 transition-all duration-300 animate-float" style={{ animationDelay: `${index * 0.7}s` }}>
-                    <info.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_5px_hsl(var(--glow-cyan))]" />
+                <div className="flex flex-col items-center gap-4">
+                  <div className="p-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300">
+                    <info.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <div className="space-y-1">
                     <p className="text-sm font-semibold text-muted-foreground">{info.label}</p>
@@ -108,34 +107,28 @@ const Contact = () => {
               {socialLinks.map((social, index) => (
                 <Button
                   key={index}
+                  variant="outline"
                   size="lg"
-                  className="relative overflow-hidden bg-card/40 backdrop-blur-xl border-2 border-primary/40 text-primary hover:border-primary hover:text-primary-foreground hover:bg-primary/20 shadow-[0_0_15px_hsl(var(--glow-cyan)/0.3)] hover:shadow-[0_0_30px_hsl(var(--glow-cyan)/0.6)] transition-all duration-300 hover:scale-110 group/btn"
+                  className={`border-primary/50 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110 ${social.color}`}
                   onClick={() => window.open(social.link, '_blank')}
                 >
-                  <span className="relative z-10 flex items-center">
-                    <social.icon className="w-5 h-5 mr-2" />
-                    {social.label}
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/30 to-primary/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-500" />
+                  <social.icon className="w-5 h-5 mr-2" />
+                  {social.label}
                 </Button>
               ))}
             </div>
 
-            <Card className="p-8 bg-card/40 backdrop-blur-xl border-2 border-primary/40 max-w-2xl w-full text-center hover:shadow-[0_0_40px_hsl(var(--glow-cyan)/0.5)] transition-all duration-500 group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <p className="text-lg text-foreground mb-4 group-hover:text-primary transition-colors duration-300 relative z-10">
+            <Card className="p-8 bg-gradient-to-r from-primary/10 to-accent/10 border-primary/30 max-w-2xl w-full text-center hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 group">
+              <p className="text-lg text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
                 Interested in data science, machine learning, or software development projects?
               </p>
               <Button
                 size="lg"
-                className="relative overflow-hidden bg-primary/20 backdrop-blur-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-[0_0_20px_hsl(var(--glow-cyan)/0.5)] hover:shadow-[0_0_40px_hsl(var(--glow-cyan)/0.8)] transition-all duration-300 hover:scale-105 group/btn z-10"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105"
                 onClick={() => window.location.href = 'mailto:girijesh170304@gmail.com'}
               >
-                <span className="relative z-10 flex items-center">
-                  <Mail className="w-5 h-5 mr-2" />
-                  Send me an email
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/50 to-primary/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-500" />
+                <Mail className="w-5 h-5 mr-2" />
+                Send me an email
               </Button>
             </Card>
           </div>
