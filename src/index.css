@@ -8,43 +8,47 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 222 47% 7%;
-    --foreground: 210 40% 98%;
+    --background: 220 30% 5%;
+    --foreground: 180 100% 95%;
 
-    --card: 230 25% 12%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 25% 10%;
+    --card-foreground: 180 100% 95%;
 
-    --popover: 222 47% 7%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 30% 8%;
+    --popover-foreground: 180 100% 95%;
 
-    --primary: 45 93% 58%;
-    --primary-foreground: 222 47% 7%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 30% 5%;
 
-    --secondary: 263 70% 60%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 280 90% 60%;
+    --secondary-foreground: 180 100% 95%;
 
-    --muted: 230 25% 12%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 220 25% 15%;
+    --muted-foreground: 180 30% 70%;
 
-    --accent: 263 70% 60%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 320 100% 60%;
+    --accent-foreground: 180 100% 95%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 180 100% 95%;
 
-    --border: 230 25% 18%;
-    --input: 230 25% 18%;
-    --ring: 45 93% 58%;
+    --border: 180 80% 30%;
+    --input: 220 25% 15%;
+    --ring: 180 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Professional portfolio tokens */
-    --gradient-start: 222 47% 7%;
-    --gradient-mid: 263 70% 15%;
-    --gradient-end: 230 25% 10%;
-    --accent-glow: 45 93% 58%;
-    --text-highlight: 45 93% 68%;
-    --card-hover: 230 25% 15%;
+    /* Futuristic tokens */
+    --gradient-start: 220 30% 5%;
+    --gradient-mid: 240 60% 15%;
+    --gradient-end: 280 50% 10%;
+    --neon-cyan: 180 100% 50%;
+    --neon-pink: 320 100% 60%;
+    --neon-purple: 280 90% 60%;
+    --glow-cyan: 180 100% 50%;
+    --glow-pink: 320 100% 60%;
+    --glass-bg: 220 25% 15%;
+    --glass-border: 180 80% 40%;
   }
 }
 
@@ -58,9 +62,32 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-gradient-to-br from-[hsl(var(--gradient-start))] via-[hsl(var(--gradient-mid))] to-[hsl(var(--gradient-end))] text-foreground;
+    @apply text-foreground;
     min-height: 100vh;
+    background: linear-gradient(135deg, hsl(var(--gradient-start)) 0%, hsl(var(--gradient-mid)) 50%, hsl(var(--gradient-end)) 100%);
     background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 50%, hsl(var(--neon-cyan) / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, hsl(var(--neon-pink) / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 90%, hsl(var(--neon-purple) / 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    animation: pulse-glow 8s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
   }
 
   h1, h2, h3, h4, h5, h6 {

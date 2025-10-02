@@ -43,12 +43,13 @@ const About = () => {
             <div className="h-1 w-24 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
           </div>
 
-          <Card className="p-8 md:p-12 bg-card/80 backdrop-blur-sm border-border/50 shadow-xl hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/30 transition-all duration-500 group">
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-center max-w-4xl mx-auto group-hover:text-foreground transition-colors duration-300">
+          <Card className="p-8 md:p-12 bg-card/40 backdrop-blur-xl border-2 border-primary/30 shadow-[0_0_30px_hsl(var(--glow-cyan)/0.3)] hover:shadow-[0_0_50px_hsl(var(--glow-cyan)/0.6)] hover:border-primary/60 transition-all duration-500 group relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-center max-w-4xl mx-auto group-hover:text-foreground transition-colors duration-300 relative z-10">
               As an enthusiastic MCA student, I possess a solid foundation in computer science and programming, 
-              with proficiency in <span className="text-primary font-semibold">Python</span>, 
-              <span className="text-primary font-semibold"> SQL</span>, and 
-              <span className="text-primary font-semibold"> web technologies</span>. 
+              with proficiency in <span className="text-primary font-semibold drop-shadow-[0_0_8px_hsl(var(--glow-cyan))] animate-neon-flicker">Python</span>, 
+              <span className="text-primary font-semibold drop-shadow-[0_0_8px_hsl(var(--glow-cyan))] animate-neon-flicker"> SQL</span>, and 
+              <span className="text-primary font-semibold drop-shadow-[0_0_8px_hsl(var(--glow-cyan))] animate-neon-flicker"> web technologies</span>. 
               My academic projects and internships have enriched my skills in data analysis and application development. 
               I am eager to contribute to a dynamic team while continuously learning in the IT industry.
             </p>
@@ -62,11 +63,12 @@ const About = () => {
               {strengths.map((strength, index) => (
                 <Card
                   key={index}
-                  className="p-6 bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 group"
+                  className="p-6 bg-card/40 backdrop-blur-xl border-2 border-primary/20 hover:border-primary/60 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_hsl(var(--glow-cyan)/0.4)] group relative overflow-hidden"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                  <div className="flex items-start gap-3 relative z-10">
+                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_8px_hsl(var(--glow-cyan))]" />
                     <p className="text-foreground font-medium group-hover:text-primary transition-colors duration-300">{strength}</p>
                   </div>
                 </Card>
