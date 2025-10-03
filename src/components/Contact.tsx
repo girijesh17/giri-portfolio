@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Instagram } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const Contact = () => {
@@ -56,6 +56,12 @@ const Contact = () => {
       label: "LinkedIn",
       link: "https://www.linkedin.com/in/giri-jesh-076093281",
       color: "hover:text-blue-400"
+    },
+    {
+      icon: Instagram,
+      label: "Instagram",
+      link: "https://www.instagram.com/girijesh0625",
+      color: "hover:text-pink-400"
     }
   ];
 
