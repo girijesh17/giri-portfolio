@@ -10,6 +10,7 @@ import SkillsPage from "./pages/Skills";
 import ContactPage from "./pages/Contact";
 import EducationPage from "./pages/Education";
 import ExperiencePage from "./pages/Experience";
+import ProjectsPage from "./pages/Projects"; // Import the ProjectsPage component
 import { Nav } from "@/components/Nav";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/education" element={<EducationPage />} />
           <Route path="/experience" element={<ExperiencePage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/projects" element={<ProjectsPage />} /> {/* Add the projects route */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

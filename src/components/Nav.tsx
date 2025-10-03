@@ -1,20 +1,6 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Nav = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleScrollTo = (id: string) => {
-    if (location.pathname === "/") {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate("/");
-      setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-    }
-  };
-
   return (
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm py-4 border-b">
       <div className="container mx-auto flex justify-center space-x-4">
@@ -27,12 +13,9 @@ export const Nav = () => {
         <Link to="/skills" className="text-muted-foreground hover:text-primary transition-colors">
           Skills
         </Link>
-        <button
-          onClick={() => handleScrollTo("projects")}
-          className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer p-0"
-        >
+        <Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">
           Projects
-        </button>
+        </Link>
         <Link to="/education" className="text-muted-foreground hover:text-primary transition-colors">
           Education
         </Link>
